@@ -16,13 +16,16 @@ public class AddressBookMain {
 		AddressBook addressBook = new AddressBook();
 		Scanner scanner = new Scanner(System.in);
 		/**
-		 * from addressBook class calling addcontact method to edit the contacts
+		 * from addressBook class calling addcontact method to edit and delete the
+		 * contacts
 		 */
 		addressBook.addContact();
-		System.out.println("Enter Y To Edit The Contact");
-		String choice = scanner.nextLine();
-		if (choice.equals("y") || choice.equals("Y")) {
+		System.out.println("Enter 1 To Edit The Contact and 2 To Delete The Contact ");
+		int choice = scanner.nextInt();
+		if (choice == 1) {
 			addressBook.editContact();
+		} else {
+			addressBook.deleteContact();
 		}
 
 	}
