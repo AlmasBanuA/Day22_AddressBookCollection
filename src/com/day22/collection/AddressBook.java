@@ -12,6 +12,10 @@ package com.day22.collection;
  * 
  * UC5:- Ability to add multiple person to Address Book
  * 
+ * UC6:- Refactor to add multiple Address Book to the System. 
+ * Each Address Book has a unique Name - Use Console to add new Address Book 
+ * - Maintain Dictionary of Address Book Name
+ * 
  * @author user -Almas
  *
  */
@@ -65,7 +69,7 @@ public class AddressBook {
 		String emailId = scanner.next();
 		person = new ContactDetails(firstName, lastName, address, city, state, zipCode, mobileNumber, emailId);
 		contactDetailsList.add(person);
-		printContact();
+
 	}
 
 	/**
@@ -109,27 +113,10 @@ public class AddressBook {
 			contactDetailsList.remove(i);
 			System.out.println("Contact Deleted");
 			System.out.println("Remaining contacts in the book isgit");
-			printContact();
 		} else {
 			System.out.println("Contact not find");
 		}
 
 	}
 
-	/**
-	 * created method printContact() to display all the contacts
-	 */
-	public void printContact() {
-		for (int i = 0; i < contactDetailsList.size(); i++) {
-			System.out.println("Contact Details");
-			System.out.println("Name         : " + contactDetailsList.get(i).getFirstName() + " "
-					+ contactDetailsList.get(i).getLastName() + "\n" + "Address      : "
-					+ contactDetailsList.get(i).getAddress() + "\n" + "City         : "
-					+ contactDetailsList.get(i).getCity() + "\n" + "State        : "
-					+ contactDetailsList.get(i).getState() + "\n" + "ZipCode      : "
-					+ contactDetailsList.get(i).getZipCode() + "\n" + "MobileNumber : "
-					+ contactDetailsList.get(i).getMobileNumber() + "\n" + "EmailId      : "
-					+ contactDetailsList.get(i).getEmailId() + "\n");
-		}
-	}
 }
