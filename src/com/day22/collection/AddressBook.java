@@ -26,14 +26,11 @@ import java.util.Scanner;
 
 public class AddressBook {
 
-	/**
-	 * Creating a List of ContactDetails of type String using ArrayList here Adding
-	 * new elements in the List
-	 */
+	ContactDetails person = new ContactDetails();
 	List<ContactDetails> contactDetailsList = new ArrayList<ContactDetails>();
 	Scanner scanner = new Scanner(System.in);
 
-	/**
+	/*
 	 * Declaring The Add Contact Method And Entering The Contact Details By Using
 	 * Scanner Class And Printing The Contact Details Of Person
 	 */
@@ -41,8 +38,19 @@ public class AddressBook {
 		System.out.println("Enter the number of contacts you want to enter");
 		int number = scanner.nextInt();
 		for (int i = 0; i < number; i++) {
-			System.out.println("Enter the contact details of person ");
-			writeContact();
+
+			/**
+			 * checking the duplicate contact by contact name.
+			 */
+			System.out.println("Enter the first name of person");
+			String fName = scanner.next();
+			if (fName.equals(person.getFirstName())) {
+				System.out.println("The entered person is already exist.");
+			} else {
+				System.out.println("Enter the contact details of person ");
+				writeContact();
+				System.out.println("contact added Successfully");
+			}
 		}
 	}
 
@@ -50,7 +58,6 @@ public class AddressBook {
 	 * created method writeContact() to create a new contacts to the AddressBook
 	 */
 	public void writeContact() {
-		ContactDetails person = new ContactDetails();
 		System.out.println("Enter First Name : ");
 		String firstName = scanner.next();
 		System.out.println("Enter Last Name : ");
@@ -77,6 +84,7 @@ public class AddressBook {
 	 * Of Contact Edit By Using FirstName If First Name Is Match The Contact Will
 	 * Edit
 	 */
+
 	public void editContact() {
 		System.out.println("Enter the first name of person to edit contact");
 		String editName = scanner.next();
@@ -84,6 +92,7 @@ public class AddressBook {
 		for (int i = 0; i < contactDetailsList.size(); i++) {
 			String name = contactDetailsList.get(i).getFirstName();
 			if (name.equalsIgnoreCase(editName)) {
+				contactDetailsList.remove(person);
 				writeContact();
 				edited = true;
 				break;
@@ -99,6 +108,7 @@ public class AddressBook {
 	 * Of Contact Delete By Using FirstName If First Name Is Match Then Contact Will
 	 * Delete
 	 */
+
 	public void deleteContact() {
 		System.out.println("Enter the first name of person to delete contact");
 		String deleteName = scanner.next();
@@ -112,7 +122,7 @@ public class AddressBook {
 		if (i < contactDetailsList.size()) {
 			contactDetailsList.remove(i);
 			System.out.println("Contact Deleted");
-			System.out.println("Remaining contacts in the book isgit");
+			System.out.println("Remaining contacts in the book igsit");
 		} else {
 			System.out.println("Contact not find");
 		}
