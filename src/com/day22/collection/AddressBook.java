@@ -8,6 +8,7 @@ package com.day22.collection;
  * 
  * UC3:- Ability to edit existing contact person using their name
  * 
+ * UC4:- Ability to delete a person using person's name
  * @author user -Almas
  *
  */
@@ -82,10 +83,8 @@ public class AddressBook {
 	}
 
 	/**
-	 * Main method for manipulation AddressBookCollection
-	 * 
-	 * @param args - Default Java param (Not used)
-	 */
+	 * created method printContact() to display all the contacts
+	*/
 	public static void printContact() {
 		for (int i = 0; i < contactDetailsList.size(); i++) {
 			person = contactDetailsList.get(i);
