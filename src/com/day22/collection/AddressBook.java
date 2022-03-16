@@ -15,6 +15,9 @@ package com.day22.collection;
  * UC6:- Refactor to add multiple Address Book to the System. 
  * Each Address Book has a unique Name - Use Console to add new Address Book 
  * - Maintain Dictionary of Address Book Name
+ *
+ * UC7:- Ability to ensure there is no Duplicate Entry of the same Person in a 
+ * particular Address Book
  * 
  * @author user -Almas
  *
@@ -84,7 +87,6 @@ public class AddressBook {
 	 * Of Contact Edit By Using FirstName If First Name Is Match The Contact Will
 	 * Edit
 	 */
-
 	public void editContact() {
 		System.out.println("Enter the first name of person to edit contact");
 		String editName = scanner.next();
@@ -108,7 +110,6 @@ public class AddressBook {
 	 * Of Contact Delete By Using FirstName If First Name Is Match Then Contact Will
 	 * Delete
 	 */
-
 	public void deleteContact() {
 		System.out.println("Enter the first name of person to delete contact");
 		String deleteName = scanner.next();
